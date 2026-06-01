@@ -79,14 +79,11 @@
   
   /* HERO */
   
-  .hero{
-    width:100%;
-    background:#f5f1ea;
-    min-height:85vh;
-    display:flex;
-    align-items:center;
-    overflow:hidden;
-  }
+.hero{
+  min-height:85vh;
+  background:#f5f1ea;
+  padding:60px 0;
+}
   
 .hero-content{
   display:flex;
@@ -312,7 +309,12 @@
   }
   
   @media(max-width:700px){
-  
+
+      .hero-content{
+    flex-direction:column;
+    text-align:center;
+    padding-top:40px;
+  }
     .nav-links{
       display:none;
     }
