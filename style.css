@@ -82,15 +82,10 @@
   .hero{
     width:100%;
     background:#f5f1ea;
-  
     min-height:85vh;
-  
     display:flex;
     align-items:center;
-  
     overflow:hidden;
-  
-    padding:40px 0 80px;
   }
   
   .hero-content{
