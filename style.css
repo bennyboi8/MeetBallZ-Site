@@ -27,109 +27,87 @@
     margin:auto;
   }
   
-  /* NAVBAR */
-  
-  .navbar{
-    width:100%;
-    background:#d84a3e;
-    position:absolute;
-    top:0;
-    z-index:999;
-  }
-  
-  nav{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:22px 0;
-  }
-  
-  .logo{
-    display:flex;
-    align-items:flex-start;
-    max-width:90px;
-    padding-top:10px;
-  }
-  
-  .logo img{
-    width:100%;
-  }
-  
-  .nav-links{
-    display:flex;
-    align-items:center;
-    gap:40px;
-    margin-left:auto;
-  
-    font-size:0.95rem;
-    font-weight:900;
-    letter-spacing:2px;
-    text-transform:uppercase;
-  
-    color:white;
-  }
-  
-  .nav-links a{
-    transition:0.3s ease;
-  }
-  
-  .nav-links a:hover{
-    opacity:0.7;
-  }
+/* NAVBAR */
+
+.navbar{
+  width:100%;
+  background:#d84a3e;
+  position:sticky;
+  top:0;
+  z-index:999;
+}
+
+nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 0;
+}
+
+.logo{
+  max-width:90px;
+  padding-top:8px;
+}
+
+.logo img{
+  width:100%;
+}
+
+.nav-links{
+  display:flex;
+  gap:40px;
+
+  margin-left:auto;
+
+  color:white;
+
+  font-size:0.95rem;
+  font-weight:900;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
   
 /* HERO */
 
 .hero{
   width:100%;
+  min-height:90vh;
   background:#f5f1ea;
-  min-height:85vh;
 
   display:flex;
   align-items:center;
 
-  overflow:hidden;
-
-  /* Adds space below navbar */
-  padding:80px 0 80px;
+  padding:120px 0 80px;
 }
 
-/* HERO LAYOUT */
-
 .hero-content{
+  width:100%;
+
   display:grid;
-  grid-template-columns:1fr 1fr;
-  align-items:start; /* Align from top instead of center */
-  gap:80px;
+  grid-template-columns:45% 55%;
+  gap:60px;
+
+  align-items:center;
 }
 
 /* HERO TEXT */
 
 .hero-text{
-  position:relative;
-  z-index:2;
-
   color:#d84a3e;
-  max-width:700px;
-
-  padding-top:40px;
 }
 
 .hero h1{
-  font-size:10vw;
+  font-size:clamp(4rem, 9vw, 8rem);
   line-height:0.85;
   font-weight:900;
-
-  margin-bottom:20px;
+  margin-bottom:24px;
 }
 
 .hero p{
+  color:#111;
   font-size:1.2rem;
-  max-width:500px;
-
-  line-height:1.4;
-
-  color:black;
-
+  line-height:1.5;
+  max-width:450px;
   margin-bottom:30px;
 }
 
@@ -137,18 +115,17 @@
 
 .hero-image{
   display:flex;
-  justify-content:flex-end;
-
-  /* Push image down */
-  padding-top:80px;
+  justify-content:center;
+  align-items:center;
 }
 
 .hero-image img{
   width:100%;
   max-width:750px;
+  height:auto;
 
-  /* Slightly larger and lower */
-  transform:scale(1.1) translateY(40px);
+  /* optional subtle scale */
+  transform:scale(1.05);
 }
 
 /* BUTTONS */
@@ -294,66 +271,70 @@
     font-weight:700;
   }
   
-  /* RESPONSIVE */
-  
-  @media(max-width:1000px){
-  
-    .hero-content{
-      grid-template-columns:1fr;
-    }
-  
-    .hero{
-      padding:40px 0;
-    }
-  
-    .hero-text{
-      order:2;
-    }
-  
-    .hero-image{
-      order:1;
-      justify-content:center;
-    }
-  
-    .hero-image img{
-      max-width:500px;
-    }
-  
-    .hero h1{
-      font-size:5rem;
-    }
-  
-    .about-content{
-      grid-template-columns:1fr;
-    }
-  
-    .stats-grid{
-      grid-template-columns:1fr;
-    }
-  
-  }
-  
-  @media(max-width:700px){
+ /* RESPONSIVE */
 
-      .hero-content{
-    flex-direction:column;
+@media(max-width:1000px){
+
+  .hero{
+    padding:80px 0 60px;
+  }
+
+  .hero-content{
+    grid-template-columns:1fr;
+    gap:30px;
+  }
+
+  .hero-text{
+    order:2;
     text-align:center;
-    padding-top:40px;
   }
-    .nav-links{
-      display:none;
-    }
-  
-    .hero h1{
-      font-size:4rem;
-    }
-  
-    .section-title{
-      font-size:3rem;
-    }
-  
-    .about-text{
-      padding:60px 20px;
-    }
-  
+
+  .hero p{
+    margin-left:auto;
+    margin-right:auto;
   }
+
+  .buttons{
+    justify-content:center;
+  }
+
+  .hero-image{
+    order:1;
+  }
+
+  .hero-image img{
+    max-width:500px;
+    transform:none;
+  }
+
+  .about-content{
+    grid-template-columns:1fr;
+  }
+
+  .stats-grid{
+    grid-template-columns:1fr;
+  }
+
+  .hero h1{
+    font-size:5rem;
+  }
+}
+
+@media(max-width:700px){
+
+  .nav-links{
+    display:none;
+  }
+
+  .hero h1{
+    font-size:4rem;
+  }
+
+  .section-title{
+    font-size:3rem;
+  }
+
+  .about-text{
+    padding:60px 20px;
+  }
+}
