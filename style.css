@@ -124,6 +124,7 @@ align-items:center;
   max-width: 750px;
   height: auto;
   display: block;
+  transform: scale(1.5);
   margin-left: -40px; /* controlled shift */
 }
 
