@@ -120,11 +120,9 @@ nav{
 }
 
 .hero-image img{
-  width:100%;
+  width:80%;
   max-width:750px;
   height:auto;
-
-  /* optional subtle scale */
   transform:scale(1.05);
 }
 
